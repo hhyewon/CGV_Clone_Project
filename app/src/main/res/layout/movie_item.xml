@@ -7,7 +7,7 @@
     android:paddingTop="20dp">
 
     <ImageView
-        app:layout_constraintDimensionRatio="1:0.55"
+        app:layout_constraintDimensionRatio="1:0.4"
         android:scaleType="centerInside"
         android:id="@+id/mv_img"
         android:layout_width="wrap_content"
@@ -33,7 +33,7 @@
 
     <ImageView
         android:adjustViewBounds="true"
-        app:layout_constraintDimensionRatio="1:0.8"
+        app:layout_constraintDimensionRatio="1:0.55"
         android:id="@+id/egg_img"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
