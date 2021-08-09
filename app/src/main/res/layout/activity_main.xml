@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:layout_marginHorizontal="20dp"
-            android:paddingVertical="4dp">
+            android:paddingVertical="2dp">
 
             <ImageView
                 android:id="@+id/main_logo"
@@ -84,52 +84,175 @@
     </com.google.android.material.appbar.CollapsingToolbarLayout>
 
     <com.google.android.material.tabs.TabLayout
+        android:id="@+id/top_tab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/tab_gradient"
         android:paddingHorizontal="20dp"
-        app:tabMode="scrollable"
-        app:tabRippleColor="@null"
-        app:tabIndicatorColor="@color/white"
-        app:tabTextColor="@color/white"
-        app:tabSelectedTextColor="@color/white"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/top_bar_col">
+        app:layout_constraintTop_toBottomOf="@+id/top_bar_col"
+        app:tabIndicatorColor="@color/white"
+        app:tabIndicatorFullWidth="false"
+        app:tabMode="scrollable"
+        app:tabRippleColor="@null"
+        app:tabSelectedTextColor="@color/white"
+        app:tabTextColor="@color/white">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="홈"
-            />
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="이벤트"
-            />
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="무비톡"
-            />
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="패스트오더"
-            />
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="기프트샵"
-            />
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CGV"
-            />
+            android:text="홈" />
 
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이벤트" />
 
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="무비톡" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="패스트오더" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="기프트샵" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CGV" />
 
     </com.google.android.material.tabs.TabLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/main_nsv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_tab">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main_cl"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <ImageView
+                android:id="@+id/main_ad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/main_ad1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/main_cl" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/main_tl1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/main_ad"
+                app:tabIndicatorColor="@color/white"
+                app:tabIndicatorFullWidth="@null"
+                app:tabRippleColor="@null"
+                app:tabSelectedTextColor="@color/black"
+                app:tabTextColor="#bcbcbc">
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="무비차트" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="상영예정" />
+
+
+            </com.google.android.material.tabs.TabLayout>
+
+            <TextView
+                android:id="@+id/all_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:text="전체보기 >"
+                app:layout_constraintBottom_toBottomOf="@+id/main_tl1"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/main_ad" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/main_tl2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/main_tl1"
+                app:tabIndicatorColor="@color/black"
+                app:tabMode="scrollable"
+                app:tabRippleColor="@null"
+                app:tabIndicatorFullWidth="false"
+                app:tabSelectedTextColor="@color/black"
+                app:tabTextColor="#999999">
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="예매차트" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ICECON" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="아트하우스" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="시그니처K" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="오직CGV" />
+
+            </com.google.android.material.tabs.TabLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/movie_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/main_tl2"
+                tools:listitem="@layout/movie_item">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
