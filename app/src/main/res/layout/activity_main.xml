@@ -49,8 +49,7 @@
                 android:adjustViewBounds="true"
                 android:src="@drawable/ticket_icon"
                 app:layout_constraintBottom_toBottomOf="@id/top_bar_cl"
-
-                app:layout_constraintDimensionRatio="1:0.8"
+                app:layout_constraintDimensionRatio="1:0.65"
                 app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintLeft_toRightOf="@+id/main_logo"
                 app:layout_constraintRight_toLeftOf="@+id/popcorn_icon"
@@ -60,11 +59,11 @@
                 android:id="@+id/popcorn_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="13dp"
                 android:adjustViewBounds="true"
                 android:src="@drawable/popcorn_icon"
                 app:layout_constraintBottom_toBottomOf="@id/top_bar_cl"
-                app:layout_constraintDimensionRatio="1:0.8"
+                app:layout_constraintDimensionRatio="1:0.65"
                 app:layout_constraintHorizontal_chainStyle="packed"
 
                 app:layout_constraintLeft_toRightOf="@+id/ticket_icon"
@@ -76,12 +75,12 @@
                 android:id="@+id/menu_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="13dp"
                 android:adjustViewBounds="true"
                 android:src="@drawable/menu_icon"
 
                 app:layout_constraintBottom_toBottomOf="@id/top_bar_cl"
-                app:layout_constraintDimensionRatio="1:0.8"
+                app:layout_constraintDimensionRatio="1:0.65"
                 app:layout_constraintLeft_toRightOf="@+id/popcorn_icon"
                 app:layout_constraintRight_toRightOf="@+id/top_bar_cl"
                 app:layout_constraintTop_toTopOf="@id/top_bar_cl" />
