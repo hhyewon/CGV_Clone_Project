@@ -2,9 +2,12 @@ package com.example.rp_week5
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.size
 import androidx.viewpager2.widget.ViewPager2
 import com.example.rp_week5.databinding.ActivityMainBinding
 import com.example.rp_week5.movies_models.MovieData
@@ -30,8 +33,11 @@ class MainActivity : AppCompatActivity() {
 
 
     var MoviesArrayList = ArrayList<Movies>()
+//    var handler = Handler(Looper.getMainLooper())
+
 
     private lateinit var movieAdapter: MovieAdapter
+
 
     private lateinit var imageSliderAdapter: ImageSliderAdapter
     private lateinit var binding: ActivityMainBinding
@@ -48,6 +54,27 @@ class MainActivity : AppCompatActivity() {
         imageSliderAdapter= ImageSliderAdapter(this, images)
         binding.mainAd.adapter=imageSliderAdapter
         binding.mainAd.orientation =ViewPager2.ORIENTATION_HORIZONTAL
+
+        binding.mainAd.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+
+            override fun onPageScrolled(
+                position: Int,
+                positionOffset: Float,
+                positionOffsetPixels: Int
+            ) {
+                super.onPageScrolled(position, positionOffset, positionOffsetPixels)
+                Log.d("TEST onPageScrolled", position.toString())
+            }
+
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+                // 다른 페이지로 스크롤 됬을때 ViewPager 의 현재 페이지 텍스트뷰를 갱신해준다.
+                Log.d("TEST onPageSelected", position.toString())
+                binding.nowIndi.text = (position + 1).toString()
+            }
+        })
+
+        binding.totalIndi.text=imageSliderAdapter.itemCount.toString()
 
 
 
@@ -90,7 +117,7 @@ class MainActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
 
                     val result = response.body() as MovieData
-                    for (i in 0..3) {
+                    for (i in 0..5) {
                         MoviesArrayList.add(
                             Movies(
                                 "https://image.tmdb.org/t/p/w500"+result.results[i].poster_path,

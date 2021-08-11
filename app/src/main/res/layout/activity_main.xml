@@ -13,8 +13,8 @@
 
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_scrollFlags="scroll|exitUntilCollapsed"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
 
         <androidx.appcompat.widget.Toolbar
@@ -22,70 +22,70 @@
             android:layout_height="?attr/actionBarSize">
 
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/top_bar_cl"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:layout_marginHorizontal="20dp"
-            android:paddingVertical="2dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/top_bar_cl"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginHorizontal="20dp"
+                android:paddingVertical="2dp">
 
-            <ImageView
-                android:id="@+id/main_logo"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:adjustViewBounds="true"
-                android:src="@drawable/main_logo"
-                app:layout_constraintBottom_toBottomOf="@id/top_bar_cl"
-                app:layout_constraintDimensionRatio="1:0.35"
+                <ImageView
+                    android:id="@+id/main_logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/main_logo"
+                    app:layout_constraintBottom_toBottomOf="@id/top_bar_cl"
+                    app:layout_constraintDimensionRatio="1:0.35"
 
-                app:layout_constraintHorizontal_chainStyle="spread_inside"
-                app:layout_constraintLeft_toLeftOf="@+id/top_bar_cl"
-                app:layout_constraintTop_toTopOf="@+id/top_bar_cl" />
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintLeft_toLeftOf="@+id/top_bar_cl"
+                    app:layout_constraintTop_toTopOf="@+id/top_bar_cl" />
 
-            <ImageView
-                android:id="@+id/ticket_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:adjustViewBounds="true"
-                android:src="@drawable/ticket_icon"
-                app:layout_constraintBottom_toBottomOf="@id/top_bar_cl"
-                app:layout_constraintDimensionRatio="1:0.65"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintLeft_toRightOf="@+id/main_logo"
-                app:layout_constraintRight_toLeftOf="@+id/popcorn_icon"
-                app:layout_constraintTop_toTopOf="@id/top_bar_cl" />
+                <ImageView
+                    android:id="@+id/ticket_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ticket_icon"
+                    app:layout_constraintBottom_toBottomOf="@id/top_bar_cl"
+                    app:layout_constraintDimensionRatio="1:0.65"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintLeft_toRightOf="@+id/main_logo"
+                    app:layout_constraintRight_toLeftOf="@+id/popcorn_icon"
+                    app:layout_constraintTop_toTopOf="@id/top_bar_cl" />
 
-            <ImageView
-                android:id="@+id/popcorn_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_marginLeft="13dp"
-                android:adjustViewBounds="true"
-                android:src="@drawable/popcorn_icon"
-                app:layout_constraintBottom_toBottomOf="@id/top_bar_cl"
-                app:layout_constraintDimensionRatio="1:0.65"
-                app:layout_constraintHorizontal_chainStyle="packed"
+                <ImageView
+                    android:id="@+id/popcorn_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="13dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/popcorn_icon"
+                    app:layout_constraintBottom_toBottomOf="@id/top_bar_cl"
+                    app:layout_constraintDimensionRatio="1:0.65"
+                    app:layout_constraintHorizontal_chainStyle="packed"
 
-                app:layout_constraintLeft_toRightOf="@+id/ticket_icon"
-                app:layout_constraintTop_toTopOf="@id/top_bar_cl"
+                    app:layout_constraintLeft_toRightOf="@+id/ticket_icon"
+                    app:layout_constraintTop_toTopOf="@id/top_bar_cl"
 
-                />
+                    />
 
-            <ImageView
-                android:id="@+id/menu_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_marginLeft="13dp"
-                android:adjustViewBounds="true"
-                android:src="@drawable/menu_icon"
+                <ImageView
+                    android:id="@+id/menu_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="13dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/menu_icon"
 
-                app:layout_constraintBottom_toBottomOf="@id/top_bar_cl"
-                app:layout_constraintDimensionRatio="1:0.65"
-                app:layout_constraintLeft_toRightOf="@+id/popcorn_icon"
-                app:layout_constraintRight_toRightOf="@+id/top_bar_cl"
-                app:layout_constraintTop_toTopOf="@id/top_bar_cl" />
+                    app:layout_constraintBottom_toBottomOf="@id/top_bar_cl"
+                    app:layout_constraintDimensionRatio="1:0.65"
+                    app:layout_constraintLeft_toRightOf="@+id/popcorn_icon"
+                    app:layout_constraintRight_toRightOf="@+id/top_bar_cl"
+                    app:layout_constraintTop_toTopOf="@id/top_bar_cl" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         </androidx.appcompat.widget.Toolbar>
@@ -93,10 +93,14 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/top_tab"
+        app:tabPaddingStart="10dp"
+        app:tabPaddingEnd="10dp"
+        app:tabMinWidth="10dp"
+        app:tabTextAppearance="@style/top_tab_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/tab_gradient"
-        android:paddingHorizontal="20dp"
+        android:paddingHorizontal="10dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/top_bar_col"
@@ -135,7 +139,7 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CGV" />
+            android:text="\@CGV" />
 
     </com.google.android.material.tabs.TabLayout>
 
@@ -164,16 +168,71 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/main_cl" />
 
+            <View
+                android:id="@+id/indi_vi"
+                android:layout_width="37dp"
+                android:layout_height="25dp"
+                android:background="#59000000"
+                app:layout_constraintBottom_toBottomOf="@+id/main_ad"
+                app:layout_constraintRight_toRightOf="@+id/main_ad" />
+            <TextView
+                android:layout_marginLeft="3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textStyle="bold"
+                android:textSize="11sp"
+                android:id="@+id/now_indi"
+                android:textColor="@color/white"
+                app:layout_constraintRight_toLeftOf="@+id/bb"
+                app:layout_constraintTop_toTopOf="@id/indi_vi"
+                app:layout_constraintBottom_toBottomOf="@+id/indi_vi"
+                />
+            <TextView
+                android:id="@+id/bb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text=" / "
+                android:textSize="11sp"
+
+                android:textStyle="bold"
+
+                app:layout_constraintLeft_toRightOf="@+id/now_indi"
+                app:layout_constraintTop_toTopOf="@+id/indi_vi"
+                app:layout_constraintBottom_toBottomOf="@+id/indi_vi"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 "
+                android:textSize="11sp"
+                android:id="@+id/total_indi"
+                android:textColor="@color/white"
+                app:layout_constraintRight_toRightOf="@id/indi_vi"
+                app:layout_constraintTop_toTopOf="@id/indi_vi"
+                app:layout_constraintBottom_toBottomOf="@+id/indi_vi"
+                app:layout_constraintLeft_toRightOf="@+id/bb"
+                android:textStyle="bold"
+                android:layout_marginRight="4dp"
+                />
+
+
             <com.google.android.material.tabs.TabLayout
+                app:tabPaddingBottom="0dp"
+                app:tabPaddingTop="20dp"
+                app:tabMinWidth="0dp"
                 android:id="@+id/main_tl1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
+                android:layout_marginHorizontal="18dp"
+                app:tabTextAppearance="@style/middle_tab_text"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/main_ad"
                 app:tabIndicatorColor="@color/white"
                 app:tabIndicatorFullWidth="@null"
                 app:tabRippleColor="@null"
+                app:tabIndicatorHeight="0dp"
                 app:tabSelectedTextColor="@color/black"
                 app:tabTextColor="#bcbcbc">
 
@@ -195,24 +254,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
+                android:layout_marginTop="17dp"
                 android:text="전체보기 >"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#bcbcbc"
                 app:layout_constraintBottom_toBottomOf="@+id/main_tl1"
                 app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/main_ad" />
 
             <com.google.android.material.tabs.TabLayout
+                app:tabPaddingTop="13dp"
                 android:id="@+id/main_tl2"
                 android:layout_width="match_parent"
+                app:tabTextAppearance="@style/movie_tab_text"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/main_tl1"
                 app:tabIndicatorColor="@color/black"
+                app:tabIndicatorFullWidth="false"
                 app:tabMode="scrollable"
                 app:tabRippleColor="@null"
-                app:tabIndicatorFullWidth="false"
+                app:tabIndicatorHeight="1dp"
                 app:tabSelectedTextColor="@color/black"
                 app:tabTextColor="#999999">
 
@@ -252,68 +318,65 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/main_tl2"
-                tools:listitem="@layout/movie_item"
-                >
+                tools:listitem="@layout/movie_item">
 
             </androidx.recyclerview.widget.RecyclerView>
 
             <View
                 android:id="@+id/middle_vi"
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="10dp"
-                app:layout_constraintTop_toBottomOf="@+id/movie_rv"
+                android:layout_marginTop="10dp"
+                android:background="#f1f1f1"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                android:background="#f1f1f1"
-                />
+                app:layout_constraintTop_toBottomOf="@+id/movie_rv" />
 
             <LinearLayout
-                android:layout_marginVertical="10dp"
-                android:layout_marginHorizontal="20dp"
-                android:orientation="horizontal"
-                android:weightSum="4"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                app:layout_constraintTop_toBottomOf="@+id/middle_vi"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:orientation="horizontal"
+                android:weightSum="4"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                >
+                app:layout_constraintTop_toBottomOf="@+id/middle_vi">
 
                 <ImageView
-                    android:padding="10dp"
-                    android:adjustViewBounds="true"
-                    android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/btn1"
-                    />
-                <ImageView
+                    android:layout_weight="1"
                     android:adjustViewBounds="true"
                     android:padding="10dp"
+                    android:src="@drawable/btn1" />
 
-                    android:layout_weight="1"
+                <ImageView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/btn2"
-                    />
-                <ImageView
+
+                    android:layout_weight="1"
                     android:adjustViewBounds="true"
                     android:padding="10dp"
+                    android:src="@drawable/btn2" />
 
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/btn3"
-                    />
                 <ImageView
-                    android:padding="10dp"
-
-                    android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:padding="10dp"
+                    android:src="@drawable/btn3" />
+
+                <ImageView
+                    android:layout_width="0dp"
+
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:padding="10dp"
                     android:src="@drawable/btn4"
-                    android:adjustViewBounds="true"
 
                     />
 

@@ -149,7 +149,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2021-08-11"
+                    android:text="2021-08-12"
                     android:textColor="@color/white"
                     android:textSize="13sp"
                     android:textStyle="bold" />
