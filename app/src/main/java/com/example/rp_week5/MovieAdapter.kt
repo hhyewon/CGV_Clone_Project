@@ -43,6 +43,8 @@ class MovieAdapter(private val context: Context, private var MoviesArrayList: Ar
 
         holder.binding.tcBtn.setOnClickListener {
             var intent  = Intent(context, CgvActivity::class.java)
+            intent.putExtra("name",holder.binding.mvName.text.toString())
+
             context.startActivity(intent)
         }
 

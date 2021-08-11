@@ -155,12 +155,11 @@
             android:layout_width="match_parent"
             android:layout_height="0dp">
 
-            <ImageView
+            <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/main_ad"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:src="@drawable/main_ad1"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                app:layout_constraintBottom_toTopOf="@+id/main_tl1"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/main_cl" />

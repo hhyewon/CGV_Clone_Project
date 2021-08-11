@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.viewpager2.widget.ViewPager2
 import com.example.rp_week5.databinding.ActivityMainBinding
 import com.example.rp_week5.movies_models.MovieData
 import retrofit2.Call
@@ -19,13 +20,20 @@ data class Movies(
     var egg_per: String,
     var ratio: String,
 )
-
+val images = arrayOf(
+    "https://img.cgv.co.kr/Front/Main/2021/0811/16286741181960.jpg",
+    "https://img.cgv.co.kr/Front/Main/2021/0730/16276122563440.jpg",
+    "https://img.cgv.co.kr/Front/Main/2021/0729/16275238825760.jpg"
+)
 class MainActivity : AppCompatActivity() {
+
+
 
     var MoviesArrayList = ArrayList<Movies>()
 
     private lateinit var movieAdapter: MovieAdapter
 
+    private lateinit var imageSliderAdapter: ImageSliderAdapter
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +43,16 @@ class MainActivity : AppCompatActivity() {
         movieAdapter = MovieAdapter(this, MoviesArrayList)
         binding.movieRv.adapter = movieAdapter
 
+        binding.mainAd.offscreenPageLimit=1 // ViewPager가 상태를 유지할 수 있는 페이지의 갯수를 지정
 
+        imageSliderAdapter= ImageSliderAdapter(this, images)
+        binding.mainAd.adapter=imageSliderAdapter
+        binding.mainAd.orientation =ViewPager2.ORIENTATION_HORIZONTAL
+
+
+
+//        intent.putExtra("name",holder.binding.mvName.toString())
+//        intent.putExtra("name",title.toString())
 
         binding.menuIcon.setOnClickListener {
             intent = Intent(this, LoginActivity::class.java)
@@ -83,6 +100,7 @@ class MainActivity : AppCompatActivity() {
                             )
                         )
                     }
+
                     movieAdapter.notifyDataSetChanged()
 
                     Log.d("DataCheck", MoviesArrayList.toString())

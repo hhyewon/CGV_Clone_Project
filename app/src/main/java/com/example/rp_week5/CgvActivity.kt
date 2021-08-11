@@ -16,7 +16,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 data class Location(
-    var cgv_location: String
+    var cgv_location: String,
 )
 
 class CgvActivity : AppCompatActivity() {
@@ -35,12 +35,69 @@ class CgvActivity : AppCompatActivity() {
         cgvAdapter = CgvAdapter(this, LocationArrayList)
         binding.locationRv.adapter = cgvAdapter
 
+        binding.mvTitle.text = intent.getStringExtra("name")
 
-        binding.seoulTxt.setOnClickListener {
-            getLocation()
-            binding.locationRv.visibility=View.VISIBLE
-            binding.seoulTxt.setBackgroundColor(Color.parseColor("#f5f5f5"))
+        binding.hongTxt.setOnClickListener {
+            getLocationHong()
+                binding.locationRv.visibility = View.VISIBLE
 
+            if (binding.hongTxt.tag.toString().equals("true")){
+                binding.hongTxt.tag="false"
+                binding.shinTxt.tag="false"
+                binding.yeouidoTxt.tag="false"
+                }else{
+                binding.hongTxt.tag="true"
+                binding.shinTxt.tag="false"
+                binding.yeouidoTxt.tag="false"
+                binding.hongTxt.setBackgroundColor(Color.parseColor("#f5f5f5"))
+                binding.shinTxt.setBackgroundColor(Color.parseColor("#ffffff"))
+                binding.yeouidoTxt.setBackgroundColor(Color.parseColor("#ffffff"))
+
+            }
+
+        }
+
+        binding.shinTxt.setOnClickListener {
+            getLocationShin()
+                binding.locationRv.visibility = View.VISIBLE
+
+            if (binding.shinTxt.tag.toString().equals("true")){
+                binding.shinTxt.tag="false"
+                binding.hongTxt.tag="false"
+                binding.yeouidoTxt.tag="false"
+            }else{
+                binding.shinTxt.tag="true"
+                binding.hongTxt.tag="false"
+                binding.yeouidoTxt.tag="false"
+                binding.shinTxt.setBackgroundColor(Color.parseColor("#f5f5f5"))
+                binding.yeouidoTxt.setBackgroundColor(Color.parseColor("#ffffff"))
+                binding.hongTxt.setBackgroundColor(Color.parseColor("#ffffff"))
+
+
+            }
+
+        }
+
+        binding.yeouidoTxt.setOnClickListener {
+            getLocationY()
+
+                binding.locationRv.visibility = View.VISIBLE
+
+
+            if (binding.yeouidoTxt.tag.toString().equals("true")){
+                binding.yeouidoTxt.tag="false"
+                binding.hongTxt.tag="false"
+                binding.shinTxt.tag="false"
+            }else{
+                binding.yeouidoTxt.tag="true"
+                binding.hongTxt.tag="false"
+                binding.shinTxt.tag="false"
+                binding.yeouidoTxt.setBackgroundColor(Color.parseColor("#f5f5f5"))
+                binding.shinTxt.setBackgroundColor(Color.parseColor("#ffffff"))
+                binding.hongTxt.setBackgroundColor(Color.parseColor("#ffffff"))
+
+
+            }
         }
 
         binding.backIcon.setOnClickListener {
@@ -49,6 +106,7 @@ class CgvActivity : AppCompatActivity() {
             finish()
         }
 
+
 //        LocationArrayList.add(
 //            Location(
 //                "어"
@@ -56,7 +114,7 @@ class CgvActivity : AppCompatActivity() {
 //        )
     }
 
-    private fun getLocation() {
+    private fun getLocationHong() {
 
         val movieInterface = RetrofitClient.cRetrofit.create(CgvInterface::class.java)
 
@@ -71,17 +129,17 @@ class CgvActivity : AppCompatActivity() {
 
                     val result = response.body() as CgvData
 
-                    Log.d("dd",result.LOCALDATA_031302.row.size.toString())
-                        for (i in 0 until result.LOCALDATA_031302.row.size) {
-                            if(result.LOCALDATA_031302.row[i].BPLCNM.contains("CGV")){
+                    LocationArrayList.clear()
 
-                                LocationArrayList.add(
-                            Location(
-                                result.LOCALDATA_031302.row[i].BPLCNM
+                    Log.d("dd", result.LOCALDATA_031302.row.size.toString())
+                    for (i in 0 until result.LOCALDATA_031302.row.size) {
+                        if (result.LOCALDATA_031302.row[i].BPLCNM.contains("CGV홍대")) {
+                            LocationArrayList.add(
+                                Location(
+                                    result.LOCALDATA_031302.row[i].BPLCNM
+                                )
                             )
-                        )
                         }
-
                     }
                     cgvAdapter.notifyDataSetChanged()
 
@@ -96,5 +154,94 @@ class CgvActivity : AppCompatActivity() {
                 Log.d("CgvActicity", t.message ?: "통신오류")
             }
         })
+    }
+
+    private fun getLocationShin() {
+
+        val movieInterface = RetrofitClient.cRetrofit.create(CgvInterface::class.java)
+
+        movieInterface.getCgv().enqueue(object :
+            Callback<CgvData> {
+
+            override fun onResponse(
+                call: Call<CgvData>,
+                response: Response<CgvData>,
+            ) {
+                if (response.isSuccessful) {
+
+                    val result = response.body() as CgvData
+                    LocationArrayList.clear()
+
+                    Log.d("dd", result.LOCALDATA_031302.row.size.toString())
+                    for (i in 0 until result.LOCALDATA_031302.row.size) {
+                        if (result.LOCALDATA_031302.row[i].BPLCNM.contains("CGV신촌")) {
+                            LocationArrayList.add(
+                                Location(
+                                    result.LOCALDATA_031302.row[i].BPLCNM
+                                )
+                            )
+                        }
+                    }
+                    cgvAdapter.notifyDataSetChanged()
+
+                    Log.d("DataCheck2", LocationArrayList.toString())
+
+                } else {
+                    Log.d("CgvActicity", "getMovieData - onResponse : Error code")
+                }
+            }
+
+            override fun onFailure(call: Call<CgvData>, t: Throwable) {
+                Log.d("CgvActicity", t.message ?: "통신오류")
+            }
+        })
+    }
+
+    private fun getLocationY() {
+
+        val movieInterface = RetrofitClient.cRetrofit.create(CgvInterface::class.java)
+
+        movieInterface.getCgv().enqueue(object :
+            Callback<CgvData> {
+
+            override fun onResponse(
+                call: Call<CgvData>,
+                response: Response<CgvData>,
+            ) {
+                if (response.isSuccessful) {
+
+                    val result = response.body() as CgvData
+                    LocationArrayList.clear()
+
+                    Log.d("dd", result.LOCALDATA_031302.row.size.toString())
+                    for (i in 0 until result.LOCALDATA_031302.row.size) {
+                        if (result.LOCALDATA_031302.row[i].BPLCNM.contains("CGV여의도")) {
+                            LocationArrayList.add(
+                                Location(
+                                    result.LOCALDATA_031302.row[i].BPLCNM
+                                )
+                            )
+                        }
+                    }
+                    cgvAdapter.notifyDataSetChanged()
+
+                    Log.d("DataCheck2", LocationArrayList.toString())
+
+                } else {
+                    Log.d("CgvActicity", "getMovieData - onResponse : Error code")
+                }
+            }
+
+            override fun onFailure(call: Call<CgvData>, t: Throwable) {
+                Log.d("CgvActicity", t.message ?: "통신오류")
+            }
+        })
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (hasFocus) {
+            window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_HIDE_NAVIGATION)
+        }
     }
 }

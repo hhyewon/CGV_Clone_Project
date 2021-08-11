@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rp_week5.databinding.TicketingItemBinding
 
-class CgvAdapter (private val context: Context, private var LocationArrayList: ArrayList<Location>) :
+class CgvAdapter(private val context: Context, private var LocationArrayList: ArrayList<Location>) :
     RecyclerView.Adapter<CgvAdapter.ViewHolder>() {
 
     var location_dataList: ArrayList<Location> = LocationArrayList
