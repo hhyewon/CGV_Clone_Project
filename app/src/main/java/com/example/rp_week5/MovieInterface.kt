@@ -1,6 +1,6 @@
 package com.example.rp_week5
 
-import com.example.rp_week5.models.MovieData
+import com.example.rp_week5.movies_models.MovieData
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query

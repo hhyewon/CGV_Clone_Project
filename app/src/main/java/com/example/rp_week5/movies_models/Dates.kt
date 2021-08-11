@@ -1,4 +1,4 @@
-package com.example.rp_week5.models
+package com.example.rp_week5.movies_models
 
 data class Dates(
     val maximum: String,
