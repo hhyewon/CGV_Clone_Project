@@ -32,7 +32,7 @@ class ImageSliderAdapter(
         Glide.with(context).load(sliderImage[position]).into(holder.binding.imageSlider)
 //        Thread(){
 //            while (true){
-//                for (i in 0..sliderImage.size){
+//                for (position in 0..sliderImage.size){
 //                    Thread.sleep(700)
 //                    handler.post{
 //                        Glide.with(context).load(sliderImage[position]).into(holder.binding.imageSlider)

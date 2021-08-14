@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <TextView
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="내이름"
+        android:id="@+id/my_name"
+        android:textSize="15sp"
+        android:textColor="@color/black"/>
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="("
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
+        <TextView
+            android:textStyle="bold"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:id="@+id/my_email"
+            android:text="이메일"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=") 님의 예매 정보입니다."
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#f5f5f5"
+        >
+    <LinearLayout
+        android:paddingVertical="30dp"
+        android:paddingHorizontal="60dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="영화이름"
+        android:id="@+id/movie_name"
+        android:textSize="20sp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="날짜"
+        android:id="@+id/movie_days"
+        android:textSize="20sp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_marginTop="15dp"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="상영관"
+        android:id="@+id/movie_location"
+        android:textSize="20sp"
+        android:textColor="@color/black"/>
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ok_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:cardCornerRadius="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/mv_img"
+        app:layout_constraintRight_toRightOf="@id/mv_img"
+        app:layout_constraintTop_toBottomOf="@id/egg_img"
+        >
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/item_btn_back"
+            android:paddingHorizontal="27dp"
+            android:paddingVertical="6dp"
+            android:text="확인"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

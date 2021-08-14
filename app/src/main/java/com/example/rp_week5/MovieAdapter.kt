@@ -8,7 +8,10 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.Target.SIZE_ORIGINAL
+import com.example.rp_week5.config.ApplicationClass
 import com.example.rp_week5.databinding.MovieItemBinding
+import com.example.rp_week5.databinding.TicketBinding
+import com.example.rp_week5.ticket.TicketActivity
 
 
 class MovieAdapter(private val context: Context, private var MoviesArrayList: ArrayList<Movies>) :
@@ -31,7 +34,7 @@ class MovieAdapter(private val context: Context, private var MoviesArrayList: Ar
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
+        val editor = ApplicationClass.sSharedPreferences.edit()
         holder.binding.mvName.text = dataList[position].name
         val url = "https://image.tmdb.org/t/p/w500" + dataList[position].img
         Glide.with(context)
@@ -44,7 +47,9 @@ class MovieAdapter(private val context: Context, private var MoviesArrayList: Ar
         holder.binding.tcBtn.setOnClickListener {
             var intent  = Intent(context, CgvActivity::class.java)
             intent.putExtra("name",holder.binding.mvName.text.toString())
-
+            ApplicationClass.sSharedPreferences.getString("name", holder.binding.mvName.text.toString())
+            editor.putString("name", holder.binding.mvName.text.toString())
+            editor.apply()
             context.startActivity(intent)
         }
 

@@ -5,10 +5,12 @@ import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.AdapterView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.example.rp_week5.cgv_models.CgvData
 import com.example.rp_week5.cgv_models.LOCALDATA031302
+import com.example.rp_week5.config.ApplicationClass
 import com.example.rp_week5.databinding.TicketingBinding
 import com.example.rp_week5.movies_models.MovieData
 import retrofit2.Call
@@ -26,7 +28,7 @@ class CgvActivity : AppCompatActivity() {
     private lateinit var cgvAdapter: CgvAdapter
 
     private lateinit var binding: TicketingBinding
-
+    val editor = ApplicationClass.sSharedPreferences.edit()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = TicketingBinding.inflate(layoutInflater)
@@ -36,6 +38,13 @@ class CgvActivity : AppCompatActivity() {
         binding.locationRv.adapter = cgvAdapter
 
         binding.mvTitle.text = intent.getStringExtra("name")
+
+
+        Log.e("aaa", binding.locationTv.text.toString())
+        ApplicationClass.sSharedPreferences.getString("day", binding.movieDay.text.toString())
+        editor.putString("day", binding.movieDay.text.toString())
+        editor.apply()
+
 
         binding.hongTxt.setOnClickListener {
             getLocationHong()
@@ -105,6 +114,8 @@ class CgvActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+
 
 
 //        LocationArrayList.add(

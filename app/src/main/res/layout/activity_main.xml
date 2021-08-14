@@ -256,7 +256,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="17dp"
                 android:text="전체보기 >"
-                android:textSize="13sp"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 android:textColor="#bcbcbc"
                 app:layout_constraintBottom_toBottomOf="@+id/main_tl1"
@@ -266,6 +266,9 @@
 
             <com.google.android.material.tabs.TabLayout
                 app:tabPaddingTop="13dp"
+                app:tabPaddingStart="7dp"
+                app:tabPaddingEnd="7dp"
+                app:tabMinWidth="7dp"
                 android:id="@+id/main_tl2"
                 android:layout_width="match_parent"
                 app:tabTextAppearance="@style/movie_tab_text"

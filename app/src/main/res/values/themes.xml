@@ -26,6 +26,7 @@
     </style>
     <style name="movie_tab_text" parent="@android:style/TextAppearance.Widget.TabWidget">
         <item name="android:textSize">13.5sp</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:textStyle">normal</item>
+
     </style>
 </resources>

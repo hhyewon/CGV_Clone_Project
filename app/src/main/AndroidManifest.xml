@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
+        android:name=".config.ApplicationClass"
         android:allowBackup="true"
         android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,6 +24,16 @@
 
         <activity android:name=".LoginActivity"></activity>
         <activity android:name=".CgvActivity"></activity>
+        <activity android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:host="oauth"
+                    android:scheme="kakaob723ac76d2dcb023013448a0f994c160" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ticket.TicketActivity"></activity>
     </application>
 
 </manifest>
